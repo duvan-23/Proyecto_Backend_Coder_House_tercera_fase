@@ -1,0 +1,69 @@
+[
+  {
+    "timestamp": 1653807299098,
+    "productos": [
+      {
+        "nombre": "Carro",
+        "descripcion": "Camioneta azul",
+        "codigo": "dd22",
+        "precio": "10000000",
+        "stock": 3,
+        "foto": "https://cdn-icons-png.flaticon.com/512/2554/2554969.png",
+        "timestamp": 1653452237466,
+        "id_producto": 1,
+        "id": 1
+      },
+      {
+        "nombre": "Moto",
+        "descripcion": "Moto 125",
+        "codigo": "cc23",
+        "precio": "2000000",
+        "stock": "12",
+        "foto": "https://cdn-icons-png.flaticon.com/512/27/27176.png",
+        "timestamp": 1653452237466,
+        "id_producto": 2,
+        "id": 1
+      },
+      {
+        "nombre": "Barco",
+        "descripcion": "Barco grande",
+        "codigo": "xa56",
+        "precio": 78000000,
+        "stock": 8,
+        "foto": "https://cdn-icons-png.flaticon.com/512/840/840081.png",
+        "timestamp": 1653452237466,
+        "id_producto": 3,
+        "id": 1
+      }
+    ],
+    "id": 1
+  },
+  {
+    "timestamp": 1653847237169,
+    "productos": [
+      {
+        "nombre": "Moto",
+        "descripcion": "Moto 125",
+        "codigo": "cc23",
+        "precio": "2000000",
+        "stock": "12",
+        "foto": "https://cdn-icons-png.flaticon.com/512/27/27176.png",
+        "timestamp": 1653452237466,
+        "id_producto": 2,
+        "id": 1
+      },
+      {
+        "nombre": "Barco",
+        "descripcion": "Barco grande",
+        "codigo": "xa56",
+        "precio": 78000000,
+        "stock": 8,
+        "foto": "https://cdn-icons-png.flaticon.com/512/840/840081.png",
+        "timestamp": 1653452237466,
+        "id_producto": 3,
+        "id": 2
+      }
+    ],
+    "id": 2
+  }
+]

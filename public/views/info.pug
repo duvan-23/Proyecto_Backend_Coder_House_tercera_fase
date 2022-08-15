@@ -1,0 +1,16 @@
+extends navbar  
+
+block info
+    div.container.mt-3
+        div.jumbotron
+            div.row
+                div.col-md-6.offset-md-3.mb-4
+                    h1.text-center(style="color:blue;")!="INFORMACIÓN"
+                -if(datos.name)
+                    div.col-md-8
+                        h3.text-left(style="color:black; margin-bottom:16px;margin-left:15px;")!=`Nombre: ${datos.name}`
+                        h3.text-left(style="color:black; margin-bottom:16px;margin-left:15px;")!=`Edad: ${datos.edad}`
+                        h3.text-left(style="color:black; margin-bottom:16px;margin-left:15px;")!=`Correo Electrónico: ${datos.username}`
+                        h3.text-left(style="color:black; margin-bottom:16px;margin-left:15px;")!=`Dirección: ${datos.direccion}`
+                        h3.text-left(style="color:black; margin-bottom:16px;margin-left:15px;")!=`Numero de telefono: ${datos.telefono}`
+                        h3.text-left(style="color:black; margin-bottom:16px;margin-left:15px;")!=`Ruta imagen: ${datos.foto}`

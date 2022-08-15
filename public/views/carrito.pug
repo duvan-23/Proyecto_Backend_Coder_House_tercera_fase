@@ -1,0 +1,28 @@
+extends navbar
+block carrito 
+    div.col-sm-5(style="background:aqua;")
+        h1(style="color:blue;padding:5px;margin-left:29px")!="Carrito de compras"
+        br
+        button#addCarrito.text-center.btn.btn-success.mt-3(type="button", name="enviar", style="margin-left:130px") Agregar Carrito
+        br
+        -if(carritos.length > 0)
+            br
+            div.row
+                each carrito, index in carritos
+                    div.col-sm-4(style="hight:40px;")
+                        div.row
+                            div.card
+                                img.card-img-top(src="https://cdn-icons-png.flaticon.com/128/1170/1170627.png",style="width:50px; margin-left:40px;")
+                                div.card-body
+                                    h5.card-title=`Carrito ${carrito.id}`
+                                    p.small.card-text=`Timestamp: ${carrito.timestamp}`
+                                    input(type='hidden',id=`carritoAdd${index+1}`,value=`${carrito.id}` )   
+                                    form(action=`/api/carrito/${carrito.id}/productos`, method="get",id=`verc${index+1}`) 
+                                        input(type='hidden',id=`valor${index+1}`,value=`${carrito.id}` name="id_carro")
+                                        a.botones-verc.btn.btn-primary(style="font-size:10px") ver
+                                        a.botones-eliminarcarrito.btn.btn-danger( style="font-size:10px") Eliminar
+        -else
+            br
+            h2.alert.alert-warning!="No hay carritos"
+        
+    

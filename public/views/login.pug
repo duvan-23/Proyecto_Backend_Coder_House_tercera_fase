@@ -1,0 +1,19 @@
+extends inicio 
+
+block login   
+    div.container.mt-3
+        div.jumbotron
+            h1(style="color:blue;")!="Login de Usuario"
+            br
+            form(action="/login" method="post")
+                div.form-group
+                    label(for="email") Ingrese su email: 
+                    input#nombre_login.form-control(type='email', placeholder='email' name='username' required)
+                div.form-group
+                    label(for="password") Ingrese su contraseña:
+                    input#nombre_login.form-control(type='password', placeholder='password' name='password' required)
+                button.btn.btn-success.mt-3.mb-1(type="submit") Login
+            hr
+            div.text-left
+                button.btn.btn-success.mt-3.mb-5(onclick="location.href = '/register'", name="registro") Ir a Registro
+                

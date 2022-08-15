@@ -1,0 +1,67 @@
+extends carrito 
+
+block productosCarrito
+    div.col-sm-7
+        h1.text-center(style="color:blue;")!="Productos del Carrito"
+        -if(idcarrito)
+            h2.text-center(style="color:blue;")!=`${idcarrito}`
+            br
+            form#form_carrito(autocomplete='off', style="width:100% ;margin-left:35px")
+            div.form-group
+                label(for="id") Id producto:
+                div.d-flex.flex-row
+                    input(type='hidden',id=`carritoAdd`,value=`${idcarrito}` )    
+                    input#id.form-control(type='number', placeholder='Id', name='title', required,style="width:50%")
+                    button#agregar.text-center.btn.btn-success(type="button", style="margin-left:20px")=`Agregar en carrito #${idcarrito}`
+        br
+        -if(productos)
+            -if(productos.length > 0)
+                div.row
+                    input(type='hidden',id=`admin2`,value=`${productos[0].admin}` )
+                    each producto, index in productos
+                        div.col-sm-4(style="hight:40px;")
+                            div.card
+                                img.card-img-top(src=producto.foto,style="width:100px; margin-left:40px;")
+                                div.card-body
+                                    h5.card-title=producto.nombre
+                                    p.card-text=`ID Producto: ${producto.id_producto}`
+                                    p.card-text=producto.descripcion
+                                    p.card-text=`Precio: $${producto.precio}`
+                                    p.card-text=`codigo: ${producto.codigo}`
+                                    p.card-text=`Stock : ${producto.stock}`
+                                    p.card-text=`Timestamp : ${producto.timestamp}`
+                                    p.font-italic.card-text=`ID Pos. carrito : ${producto.id}`
+                                    p.font-italic.card-text=`Timestamp carrito: ${producto.timestamp}`
+                                    input(type='hidden',id=`valor${index+1}`,value=`${producto.id}` )
+                                    input(type='hidden',id=`valorp${index+1}`,value=`${producto.id_producto}` )
+                                    input(type='hidden',id=`valor2${index+1}`,value=`${producto.nombre}` )
+                                    input(type='hidden',id=`valor3${index+1}`,value=`${producto.precio}` )
+                                    input(type='hidden',id=`valor4${index+1}`,value=`${producto.foto}` )
+                                    input(type='hidden',id=`valor5${index+1}`,value=`${producto.descripcion}` )
+                                    input(type='hidden',id=`valor6${index+1}`,value=`${producto.codigo}` )
+                                    input(type='hidden',id=`valor7${index+1}`,value=`${producto.stock}` )
+                                    input(type='hidden',id=`valor8${index+1}`,value=`${producto.id}` )
+                                    a.botones-editarc.btn.btn-primary(id=`editar${index+1}`, style="font-size:10px") Actualizar 
+                                    a.botones-eliminarc.btn.btn-danger(id=`eliminar${index+1}`, style="font-size:10px") Eliminar
+                div.row
+                    div.col-12
+                        div.d-flex.justify-content-center
+                            br
+                            button#comprar.text-center.btn.btn-warning.mt-3.mb-2.al(type="button", name="comprar") Realizar compra
+                            br
+            -else
+                h2.alert.alert-warning!="No hay productos"
+        -else
+                h2.alert.alert-warning!="Seleccione carrito"
+    div.modal.fade#myModal(tabindex="-1")    
+        div.modal-dialog
+            div.modal-content        
+                div.modal-header
+                    h4.modal-title  Modal Header
+                    button.btn-close(type="button", data-dismiss="modal") d  
+                div.modal-body
+                    p texto
+                div.modal-footer
+                    button.btn.btn-secondary(type="button", data-dismiss="modal")  Close  
+                    button.btn.btn-primary(type="button")  save
+    script(src='/envioCarrito.js')

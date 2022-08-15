@@ -1,0 +1,29 @@
+html 
+    head 
+        tittle('Mi plantilla de medidor en Pug JS')
+        link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css'
+    integrity='sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l' crossorigin='anonymous')
+        script(src='//cdn.jsdelivr.net/npm/sweetalert2@11')
+    body
+        div.container.mt-3
+            div.jumbotron
+                div.row
+                    block login
+                    block register 
+                    block register-already
+                    block login-error
+                    block register-error
+                    block nombre_login
+                div.row
+                    block navbar
+            div.jumbotron
+                div.row
+                    block formulario
+                    block productos
+                    block carrito
+                    block productosCarrito
+                    block info
+                    
+                    
+        script(src='/login.js')
+        

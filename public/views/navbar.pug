@@ -1,0 +1,13 @@
+extends nombre_login
+
+block navbar 
+    div.col-sm-12(style="background:aqua;")
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+            button.navbar-toggler(type="button", data-toggle="collapse",data-target="#navbarNavAltMarkup",aria-controls="navbarNavAltMarkup",aria-expanded="false",aria-label="Toggle navigation")
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            div.collapse.navbar-collapse#navbarNavAltMarkup
+                div.navbar-nav
+                    a.nav-item.nav-link.active.mr-4(href="/api/productos",style="background-color: #e3f2fd;") Productos
+                    a.nav-item.nav-link.active.mr-4(href="/api/carrito",style="background-color: #e3f2fd;") Carrito
+                    a.nav-item.nav-link.active.mr-4(href="/perfil",style="background-color: #e3f2fd;") Perfil

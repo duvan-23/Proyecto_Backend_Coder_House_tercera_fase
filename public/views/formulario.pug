@@ -1,0 +1,23 @@
+extends navbar 
+block formulario
+    div.col-sm-5(style="background:aqua;")
+        h1(style="color:blue;padding:5px;margin-left:29px")!="Ingrese Productos"
+        br
+        form#form_productos(autocomplete='off', style="width:80% ;margin-left:35px")
+            div.form-group
+                label(for="nombre") Nombre:
+                input#nombre.form-control(type='text', placeholder='nombre' name='title' required)
+                label(for="descripcion") Descripción:
+                input#descripcion.form-control(type='text', placeholder='descripcion' name='title' required)
+                label(for="codigo") Codigo:
+                input#codigo.form-control(type='text', placeholder='codigo' name='title' required)
+                label(for="foto") Foto URL:
+                input#foto.form-control(type='url', placeholder='foto' name='thumbnail' required)    
+                label(for="precio") Precio:
+                input#precio.form-control(type='number', placeholder='precio' name='price' required)
+                label(for="stock") Stock:
+                input#stock.form-control(type='number', placeholder='stock' name='price' required)
+                
+            button.text-center.btn.btn-success.mt-3(type="submit", name="enviar", style="margin-left:130px") Enviar
+    
+    
