@@ -38,6 +38,26 @@ if(agregar){
         }, 1000);
     })
 }
+const comprar = document.getElementById('comprar');
+if(comprar){
+    comprar.addEventListener('click', e => {
+        e.preventDefault();
+        let id=document.getElementById('carritoAdd').value;
+        const data ={
+            id: id
+        };
+        fetch(`/comprar`, {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify(data)
+        })
+        setTimeout(() => {
+            alert("Compra realizada");
+        }, 1000);
+    })
+}
 
 
 

@@ -2,6 +2,7 @@ const mongoose=require( "mongoose");
 const {productos} =require("./models/productos.js");
 const {carrito} =require("./models/carrito.js");
 const { usuarios}=require( "./models/usuarios.js");
+const logger = require( './logger.js');
 const models= productos;
 const models2= carrito;
 const models3= usuarios;
@@ -11,10 +12,9 @@ let ContenedorMongoDb =class{
     }
 
     async conectar(){
-        const URL = "mongodb+srv://duvan:123@cluster0.sdggjza.mongodb.net/ecommerce?retryWrites=true&w=majority";
-        let conexion = await mongoose.connect(URL);
+        let conexion = await mongoose.connect(this.nombre);
 
-        return console.log("Conexión a MongoDB correcta");
+        return logger.info("Conexión a MongoDB correcta");
     }
 
     async getById(id){
